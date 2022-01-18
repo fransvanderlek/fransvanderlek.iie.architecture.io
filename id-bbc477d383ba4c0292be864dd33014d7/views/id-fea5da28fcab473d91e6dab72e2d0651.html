@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>RAMI4.0: Layers</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>RAMI4.0: Layers</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap">5.2 Architecture axis (&#8220;Layers&#8221;)
+5.2.1 Overview
+The vertical axis describes the architecture in terms of properties and system structures with their functions
+and function-specific data in the form of layers.
+The six architectural layers are used on the vertical axis to describe the structural properties of an asset or
+combination of assets:
+- Business;
+- Functional;
+- Information;
+- Communication;
+- Integration;
+- Asset.
+Layers do not always have to have content.
+There is a loose connection between the layers. Interactions may only take place between two adjacent
+ layers or  within a layer. Layers are never skipped. Interactions may be passed through.
+
+
+5.2.2 Business  alayer
+
+The &#8220;Business&#8221; layer describes the commercial view. This includes:
+General organizational boundary conditions (such as order commissioning, general ordering conditions
+- or regulatory provisions);
+- Monetary conditions (price, availability of resources, discounts, etc.);
+- Ensuring the integrity of functions in the value-added chain;
+- Modelling rules that the I4.0 system must follow;
+- Mapping business models and the resulting business processes;
+- General legal and regulatory conditions;
+- Orchestration of services on the &#8220;Functional&#8221; layer;
+- Links between different business processes;
+Receipt of events in order for a business process to go to the next stage.
+
+NOTE
+ The functionality of the &#8220;Business&#8221; layer is not related to specific solutions, such as Enterprise Resource
+Planning  (ERP). ERP functions  are typically assigned to the &#8220;Functional&#8221; layer.
+
+
+5.2.3 Functional layer
+
+The &#8220;Functional&#8221; layer describes (logical) functions of an asset (technical functionality) with regard to its
+role in the Industrie 4.0 system.
+These include the:
+- formal, digital description of functions;
+- platform for horizontal integration of different functions;
+- runtime and modelling environment for services and business processes;
+runtime environment for applications and technical functionality.
+
+
+5.2.4 Information layer
+The &#8220;Information&#8221; layer describes the data that is used, generated or modified by the technical functionality
+of the asset.
+This includes the:
+- runtime environment for (pre-)processing the event;
+- execution of rules;
+- formal description of models and rules;
+- persisting of data represented by the models;
+- ensuring the integrity of data;
+- consistent integration of different data;
+- acquiring new, higher quality data (data, information, knowledge);
+- providing structured data via service interfaces;
+receiving events and transforming them into a suitable form for the data available to the functional layer;
+- context pre-processing.
+NOTE
+ Context pre-processing is, for example, when one or more events have rules applied to them to generate one
+or more other events which then initiate processing in the functional layer.
+
+
+5.2.5 Communication layer
+The &#8220;Communication&#8221; layer describes Industrie 4.0-compliant access to information and functions of a
+connected asset by other assets. In other words, it describes which data is used, where it is used and when it
+is distributed.
+
+NOTE 1
+ Current field buses, RFID, QR codes, etc. are not part of the &#8220;Communication&#8221; layer, but part of the
+&#8220;Integration&#8221; layer.
+
+NOTE 2
+ The transferred information and functions are not only of essential importance during their (operational)
+utilization, but also in all other phases of the asset&#8217;s lifetime.
+
+EXAMPLE
+ - Standardized I4.0 communication using a uniform data format;
+- Providing services, for example as information functions based on a service-oriented architecture (SOA).
+
+
+5.2.6 Integration layer
+The &#8220;Integration&#8221; layer represents the transition from the physical world to the information world. It
+describes the infrastructure that exists in order to implement a function (resource). This layer is where the
+properties and process-related functions that make the asset usable for its intended purpose are stored.
+
+NOTE
+ The advantage of structuring in the asset layer and the integration layer is that in the higher layers it does
+not matter whether a subfunction is carried out in the physical world, i.e. physically in the integration layer, or in the
+form of software, in other words as a program in the functional layer.
+
+The content of the integration layer includes:
+- Providing the representation of the actual resource of an asset by means of information on assets,
+- physical objects, hardware, documents, software/firmware, etc.;
+- Describing the technical elements, such as RFID readers, sensors, human-machine interfaces (HMI) and
+- signal converters;
+- Computer-aided control of technical (sub)processes;
+- Generating events from real assets;
+- A human-machine interface (HMI).
+
+Each important event in the real world generates an event in the virtual world, in other words in the
+integration layer and possibly higher layers too. If reality changes in the physical world, this event is
+reported to the integration layer.
+
+Relevant events can therefore trigger events in the information layer and higher layers via the
+communication  layer.
+
+
+5.2.7 Asset layer
+
+The &#8220;Asset&#8221; layer represents reality, i.e. the asset that actually exists in the physical world. It is the material
+reality which is virtually represented in the layers above it.
+
+For every relevant item in the &#8220;Asset&#8221; layer, an item must exist in the higher-level layers of the digital world.
+However, not every relevant item in the digital world has a corresponding item in the &#8220;Asset&#8221; layer.
+
+EXAMPLE
+ A relevant property of an existent machine part appears as a representation in the &#8220;Integration&#8221; layer.
+If the machine part is scrapped, it disappears from the physical world, but remains, for example, as a plan in the archives
+in the information world of the &#8220;Integration&#8221; layer or the &#8220;Information&#8221; layer.
+
+The &#8220;Asset&#8221; layer represents
+- the physical world, that is all real, existing assets as defined by Industrie 4.0 and by humans, e.g. physical
+elements such as linear axes and sheet metal parts, services, documents, circuit diagrams, ideas and
+- archives,
+- the interface between humans and the information world, and
+- the connection of the assets to the &#8220;Integration&#8221; layer.
+
+Multiple assets described according to RAMI4.0 in the &#8220;Asset&#8221; layer can be combined to form a more complex
+asset. For this, all the individual assets and the new, more complex asset must be described according to the
+rules of the reference architecture model.
+</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>
